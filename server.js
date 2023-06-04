@@ -15,7 +15,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 
 app.use('/', router);
-
+app.get('/', (req, res) => {
+    return res.send('<h1> TODO HOME PAGE </>');
+})
 
 app.use(async (req, res, next) => {
     if (req.headers.authorization) {
